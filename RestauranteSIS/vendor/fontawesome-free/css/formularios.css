@@ -1,0 +1,234 @@
+﻿.formulario {
+    width: 800px;
+    margin: 30px auto;
+    padding: 10px 15px;
+    border: 5px solid rgb(66, 69, 112);
+    border-radius: 10px;
+}
+
+.controles {
+    margin: 15px 0;
+}
+
+    .controles > input {
+        padding: 10px 5px;
+        width: 250px;
+    }
+
+    .controles > div {
+        position: absolute;
+        margin-top: -35px;
+        color: #ccc;
+        margin-left: 5px;
+    }
+
+    .controles > .placeholder {
+        position: absolute;
+        margin-top: -35px;
+        color: #ccc;
+        margin-left: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .controles > .noplaceholder {
+        margin-top: -58px;
+        color: #000;
+        background: #fff;
+        transition: all 0.3s ease;
+        font-size: 18px;
+    }
+
+    .controles > input:focus {
+        border: none;
+        padding: 12px 7px;
+        outline: 2px solid orange;
+    }
+
+.textoarea {
+    position: absolute;
+    background-color: transparent;
+    padding-top: 35px;
+}
+
+.controles > .placeholderareas {
+    padding-top: 35px;
+    color: #ccc;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.controles > .noplaceholderareas {
+    margin-top: -10px;
+    padding-top: 0;
+    color: #000;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.controles > textarea {
+    width: 250px;
+    height: 100px;
+    max-width: 250px;
+    max-height: 100px;
+    min-height: 100px;
+    min-width: 250px;
+    padding: 10px;
+}
+
+.autocompletar {
+    position: absolute;
+    display: block;
+    z-index: 100;
+    background-color: #fff;
+    border: 2px solid rgb(66, 69, 112);
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    min-width: 250px;
+    width: 350px;
+    padding: 0;
+    margin-top: -10px;
+    margin-left: 15px;
+    overflow:hidden;
+}
+
+.autocompletar > .opcionCompletar{
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    color: #000;
+    background: #fff;
+}
+
+    .autocompletar > .opcionCompletar:focus {
+        background-color: #374a71;
+        color: #fff;
+    }
+
+    .control {
+        padding: 10px 15px;
+        min-width: 150px;
+        border-radius: 0 10px 10px 0;
+        margin-left: -5px;
+        padding-top: 8px;
+        border: 2px solid rgb(66, 69, 112);
+    }
+    .control:focus {
+        border: 2px solid orange;
+        outline: none;
+    }
+
+input[type="date"] {
+    padding: 8px 15px;
+    padding-top: 7px;
+    width: 200px;
+}
+
+    input[type="date"]:focus {
+        outline: none;
+        padding: 8px 15px;
+        padding-top: 7px;
+        border: 2px solid orange;
+    }
+
+.grupoControles > .controles > label {
+    position: relative;
+    padding: 10px 15px;
+    padding-bottom: 12px;
+    border-radius: 10px 0 0 10px;
+    background-color: rgb(66, 69, 112);
+    color: #fff;
+}
+
+.controles > textarea:focus {
+    border: none;
+    outline: 2px solid orange;
+}
+
+.grupoControles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.grupoControles > .controles > .archivo {
+    top: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(66, 69, 112);
+    color: rgb(66, 69, 112);
+    background-color: #fff;
+}
+
+    .grupoControles > .controles > .archivo:hover {
+        color: #fff;
+        background-color: rgb(66, 69, 112);
+    }
+
+.ocultarArchivo {
+    margin-top: 35px;
+    width: 150px;
+    height: 0;
+}
+
+.mostrarArchivo {
+    margin-top: 35px;
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btnEnviar {
+    width: 30%;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 15px;
+    padding: 5px 0;
+    max-height: 40px;
+    border: 2px solid rgb(66, 69, 112);
+    color: rgb(66, 69, 112);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+    .btnEnviar:hover {
+        color: #fff;
+        background-color: rgb(66, 69, 112);
+        cursor: pointer;
+    }
+
+    .btnEnviar:focus {
+        outline: none;
+    }
+
+.usuario {
+    width: 270px;
+    min-height: 43px;
+    max-height: 43px;
+    margin-top: -52px;
+    overflow: hidden;
+}
+
+.controlesUsuario {
+    margin-top: 25px;
+}
+
+.password {
+    border: none;
+    background-color: rgb(66, 69, 112);
+    padding: 12px;
+    margin-left: -5px;
+}
+
+i{
+    color: #fff;
+}

@@ -1,0 +1,60 @@
+﻿<div class="container-fluid">
+    @if (@ViewData["MsgError"] != null)
+    {
+        <div class="alert alert-danger text-center">@ViewData["MsgError"]</div>
+    }
+
+    <button type="button" class="btn btn-outline-success d-block w-50 mx-auto my-2" data-toggle="modal" data-target=".agregar-categoria">NUEVA CATEGORIA</button>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Categorias
+        </div>
+        <div class="card-body" style="max-height: 80vh; padding: 20px; overflow-y: scroll;">
+            <div id="contenedor-categoria" class="w-100 align-content-between" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade agregar-categoria" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="agregarCategoria">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAgregar">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">DATOS CATEGORIA</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="nombre" class="textbox" id="nombre">
+                        <div class="texto">Nombre categoria</div>
+                    </div>
+
+                    <div class="controles">
+                        <input type="file" name="imagen" id="archivo">
+                        <label for="archivo" class="archivo">Seleccionar imágen</label>
+                        <article id="visualizar" class="ocultarArchivo"></article>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <button id="guardar" class="btnEnviar" type="button">Guardar</button>
+                </div>
+
+                <div id="alertas"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade editar-categoria" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="editarCategoria">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formEdit">n                
+            </form>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendor/fontawesome-free/js/categoria.js"></script>
+</div>

@@ -1,0 +1,172 @@
+﻿    <div class="container-fluid">
+    @if (@ViewData["MsgError"] != null)
+    {
+        <div class="alert alert-danger text-center">@ViewData["MsgError"]</div>
+    }
+
+    <button type="button" class="btn btn-outline-success d-block w-50 mx-auto my-2" data-toggle="modal" data-target=".agregar-empleados">NUEVO EMPLEADO</button>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Registros Empleados
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" width="100%" cellspacing="0" id="tablaEmpleados">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>GÉNERO</th>
+                            <th>CARGO</th>
+                            <th>SALARIO</th>
+                            <th>SUCURSAL</th>
+                            <th>ESTADO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>GÉNERO</th>
+                            <th>CARGO</th>
+                            <th>SALARIO</th>
+                            <th>SUCURSAL</th>
+                            <th>ESTADO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </tfoot>
+                    <tbody id="cTablaEmpleados">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade agregar-empleados" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="agregarEmpleado">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAgregar">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">DATOS EMPLEADO</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="nombre" class="textbox" id="nombre">
+                        <div class="texto">Nombre empleado</div>
+                    </div>
+
+                    <div class="controles">
+                        <label for="genero">Seleccionar género:</label>
+                        <select class="control" name="genero" id="genero">
+                            <option value="MASCULINO">MASCULINO</option>
+                            <option value="FEMENINO">FEMENINO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="dui" class="textbox" id="dui">
+                        <div class="texto">DUI empleado</div>
+                    </div>
+
+                    <div class="controles">
+                        <input type="text" name="nit" class="textbox" id="nit">
+                        <div class="texto">NIT empleado</div>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="file" name="imagen" id="archivo">
+                        <label for="archivo" class="archivo">Seleccionar imágen</label>
+                        <article id="visualizar" class="ocultarArchivo"></article>
+                    </div>
+
+                    <div class="controles">
+                        <div class="textoarea">Dirección empleado</div>
+                        <textarea class="area" name="direccion" id="dir"></textarea>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="telefono" class="textbox" id="telefono">
+                        <div class="texto">Telefono empleado</div>
+                    </div>
+
+                    <div class="controles">
+                        <input type="email" name="email" class="textbox">
+                        <div class="texto">E-mail empleado</div>
+                    </div>
+                </div>
+
+
+                <div class="grupoControles">
+                    <div class="controles controlesUsuario">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" name="usuario" value="" id="usuario" class="usuario control" readonly />
+                    </div>
+
+                    <div class="controles">
+                        <input type="password" id="passwd" name="passwd" class="textbox" readonly>
+                        <div class="texto" id="passwdplace">Contraseña empleado</div>
+                        <button type="button" class="password"><i id="iconoPassword" class="fa fa-eye"></i></button>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label for="sucursal">Sucursal:</label>
+                        <select name="sucursal" class="control" id="sucursal">
+                        </select>
+                    </div>
+
+                    <div class="controles">
+                        <label for="rol">rol:</label>
+                        <select name="rol" class="control" id="rol">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label for="fecha">Fecha nacimiento:</label>
+                        <input type="date" name="fecha" class="control" id="fecha">
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <button id="guardar" class="btnEnviar" type="button">Guardar</button>
+                </div>
+
+                <div id="alertas"></div>
+            </form>
+        </div>
+    </div>
+    <div class="modal fade ver-empleados" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="verEmpleado">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-light" style="height: 85vh;">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">IMPRIMIR REPORTE</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <iframe id="reporte" style="width: 95%; height: 90%; display:block; margin: 10px auto;" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade editar-empleados" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="editarEmpleado">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formEditar">                
+            </form>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendor/fontawesome-free/js/empleados.js"></script>
+</div>

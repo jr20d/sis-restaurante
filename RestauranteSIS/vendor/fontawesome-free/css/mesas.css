@@ -1,0 +1,103 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+#titulo {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
+.encabezadoMesa {
+    margin-bottom:0;
+}
+
+hr {
+    border: 3px solid #fff;
+    width: 65px;
+    margin: 0 auto;
+}
+
+#mesas {
+    width: 95%;
+    margin: 0 auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+    #mesas > div {
+        width: 17%;
+        min-width: 250px;
+        margin: 20px 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+        #mesas > div > h3 {
+            width: 100%;
+            height: 35px;
+            border: none;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+            background-color: rgb(38, 65, 95);
+            color: #fff;
+        }
+
+        #mesas > div > .cuerpoMesa {
+            display: flex;
+            flex-direction: row;
+        }
+
+.cuerpoMesa > .tituloMesa {
+    width: 85%;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 0 0 0 15px;
+}
+
+.cuerpoMesa > button {
+    width: 15%;
+    border: 2px solid rgb(38, 65, 95);
+    background-color: #fff;
+    color: rgb(38, 65, 95);
+    border-radius: 0 0 15px 0;
+    font-size: 42px;
+    transition: linear 0.3s;
+}
+
+    .cuerpoMesa > button:hover {
+        background-color: rgb(38, 65, 95);
+        color: #fff;
+        border: 2px solid #fff;
+        cursor: pointer;
+    }
+
+.ocupado {
+    background-color: rgb(197, 52, 48);
+}
+
+.disponible {
+    background-color: rgb(58, 151, 32);
+}
+
+.reservado {
+    background-color: rgb(90, 109, 119);
+}

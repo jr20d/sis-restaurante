@@ -1,0 +1,98 @@
+﻿<div class="container-fluid">
+
+    <button type="button" class="btn btn-outline-success d-block w-50 mx-auto my-2" data-toggle="modal" data-target=".agregar-rol">AGREGAR ROL</button>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Registros Roles
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" id="tablaRoles" width="100%" cellspacing="0">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>SALARIO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>SALARIO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </tfoot>
+                    <tbody id="cTablaRoles"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade agregar-rol" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAgregarRol">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">DATOS ROL</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="nombre" class="textbox" id="nombre">
+                        <div class="texto">Nombre rol</div>
+                    </div>
+
+                    <div class="controles">
+                        <input type="text" name="salario" class="textbox" id="salario">
+                        <div class="texto">Salario rol</div>
+                    </div>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label for="rol">Privilegio:</label>
+                        <select name="acceso" class="control" id="acceso">
+                            <option value="1">NINGUNO</option>
+                            <option value="2">LIMITADO</option>
+                            <option value="3">TOTAL</option>
+                        </select>
+                    </div>
+
+                    <div class="controles">
+                        <label for="unico">Plaza unica:</label>
+                        <select name="unico" class="control" id="unico">
+                            <option value="0">NO</option>
+                            <option value="1">SI</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grupoControles">
+                    <button id="guardarRol" class="btnEnviar" type="button">Guardar</button>
+                </div>
+                <div id="alertas"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade editar-rol" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAgregarRol">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">DATOS ROL</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target=".editar-mesa">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles" id="editCampo">
+                </div>
+                <div id="espacioBtnEdit" class="grupoControles">                    
+                </div>
+                <div id="alertasEdit"></div>
+            </form>
+        </div>
+    </div>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/vendor/fontawesome-free/js/Roles.js"></script>
+</div>

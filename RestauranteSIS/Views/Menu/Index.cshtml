@@ -1,0 +1,120 @@
+﻿<div class="container-fluid">
+    @if (@ViewData["MsgError"] != null)
+    {
+        <div class="alert alert-danger text-center">@ViewData["MsgError"]</div>
+    }
+    <button type="button" class="btn btn-outline-success d-block w-50 mx-auto my-2" data-toggle="modal" data-target=".agregar-menu">NUEVO ELEMENTO DEL MENÚ</button>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Menú
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" width="100%" cellspacing="0" id="tablaMenu">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>PRECIO</th>
+                            <th>DESCUENTO</th>
+                            <th>A PAGAR</th>
+                            <th>CATEGORIA</th>
+                            <th>ESTADO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>PRECIO</th>
+                            <th>DESCUENTO</th>
+                            <th>A PAGAR</th>
+                            <th>CATEGORIA</th>
+                            <th>ESTADO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </tfoot>
+                    <tbody id="cTablaMenu">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade agregar-menu" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="agregarMenu">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAgregar">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">DATOS ELEMENTO DEL MENÚ</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="nombre" class="textbox" id="nombre">
+                        <div class="texto">Nombre</div>
+                    </div>
+
+                    <div class="controles">
+                        <input type="text" name="precio" class="textbox" id="precio">
+                        <div class="texto">Precio</div>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="descuento" class="textbox" id="descuento">
+                        <div class="texto">Descuento</div>
+                    </div>
+
+                    <div class="controles">
+                        <div class="textoarea">Descripción</div>
+                        <textarea class="area" name="descripcion" id="descripcion"></textarea>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="file" name="imagen" id="archivo">
+                        <label for="archivo" class="archivo">Seleccionar imágen</label>
+                        <article id="visualizar" class="ocultarArchivo"></article>
+                    </div>
+
+                    <div class="controles">
+                        <label for="categoria">Categoría:</label>
+                        <select name="categoria" class="control" id="categoria">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label for="estado">Mostrar:</label>
+                        <select name="estado" class="control" id="estado">
+                            <option value="1">SI</option>
+                            <option value="0">NO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <button id="guardar" class="btnEnviar" type="button">Guardar</button>
+                </div>
+
+                <div id="alertas"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade editar-menu" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="editarMenu">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formEdit">                
+            </form>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendor/fontawesome-free/js/menu.js"></script>
+</div>

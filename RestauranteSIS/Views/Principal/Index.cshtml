@@ -1,0 +1,53 @@
+﻿@model IList<RestauranteSIS.Models.Sucursal.SucursalVM>
+
+<div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+    </ol>
+
+    <!-- Icon Cards-->
+    <div class="row">
+        @foreach (var Sucursal in Model)
+        {
+            if (Int32.Parse(Session["acceso"].ToString()) == 1)
+            {
+                if (Int32.Parse(Session["sucursalID"].ToString()) == Sucursal.ID)
+                {
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bg-primary o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-building"></i>
+                                </div>
+                                <div class="mr-5">Ingresos: $@Math.Round(Sucursal.Ingreso, 2)</div>
+                            </div>
+                            <p class="card-footer text-white clearfix small z-1">
+                                <h5 class="float-left">@Sucursal.Nombre</h5>
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-xl-3 col-sm-6 mb-3">
+                    <div class="card text-white bg-primary o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-fw fa-building"></i>
+                            </div>
+                            <div class="mr-5">Ingresos: $@Math.Round(Sucursal.Ingreso, 2)</div>
+                        </div>
+                        <p class="card-footer text-white clearfix small z-1">
+                            <h5 class="float-left">@Sucursal.Nombre</h5>
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

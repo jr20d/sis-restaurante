@@ -1,0 +1,54 @@
+﻿<div class="container-fluid">
+    @if (@ViewData["MsgError"] != null)
+    {
+        <div class="alert alert-danger text-center">@ViewData["MsgError"]</div>
+    }
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Registros Facturas
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" width="100%" cellspacing="0" id="tablaFactura">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th>CORRELATIVO</th>
+                            <th>FECHA</th>
+                            <th>TIPO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table table-dark">
+                        <tr>
+                            <th>CORRELATIVO</th>
+                            <th>FECHA</th>
+                            <th>TIPO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </tfoot>
+                    <tbody id="cTablaFacturas">                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade ver-facturas" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="verFactura">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-light" style="height: 85vh;">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">IMPRIMIR FACTURA</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <iframe id="factura" style="width: 95%; height: 90%; display:block; margin: 10px auto;" src=""></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendor/fontawesome-free/js/facturas.js"></script>
+</div>

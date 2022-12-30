@@ -1,0 +1,80 @@
+﻿<div class="container-fluid">
+
+    <button type="button" class="btn btn-outline-success d-block w-50 mx-auto my-2" data-toggle="modal" data-target=".agregar-sucursal">AGREGAR SUCURSAL</button>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Registros Sucursales
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" id="tablaSucursal" width="100%" cellspacing="0">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>TELEFONO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table table-dark">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>TELEFONO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </tfoot>
+                    <tbody id="cTablaSucursal"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade agregar-sucursal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAgregarSucursal">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">DATOS SUCURSAL</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <input type="text" name="nombre" class="textbox" id="nombre">
+                        <div class="texto">Nombre sucursal</div>
+                    </div>
+
+                    <div class="controles">
+                        <input type="text" name="telefono" class="textbox telefono" id="telefono">
+                        <div class="texto">Telefono sucursal</div>
+                    </div>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <div class="textoarea">Dirección sucursal</div>
+                        <textarea class="area" name="direccion" id="dirSucursal"></textarea>
+                    </div>
+
+                    <div class="controles">
+                        <input type="text" name="mesas" class="textbox" id="cantMesas">
+                        <div class="texto">Mesas sucursal</div>
+                    </div>
+                </div>
+                <div class="grupoControles">
+                    <button id="guardarSucursal" class="btnEnviar" type="button">Guardar</button>
+                </div>
+                <div id="alertas"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade editar-sucursal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formEditarSucursal">
+            </form>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendor/fontawesome-free/js/sucursal.js"></script>
+</div>

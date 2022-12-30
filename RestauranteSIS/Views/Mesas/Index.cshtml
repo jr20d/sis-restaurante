@@ -1,0 +1,94 @@
+﻿<div class="containte-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            MESAS
+        </div>
+
+        <div class="card-body">
+            <div id="mesas" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade editar-mesa" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="editarMesa">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formEditarMesa">
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade asignar-mesa" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="asignarMesa">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formAsignarMesa">
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade ver-mesa" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="verMesa">
+        <div class="modal-dialog modal-lg">
+            <form class="formulario modal-content bg-light" id="formVerMesa">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">MESA RESERVADA</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label>Cliente:</label>
+                        <input type="text" name="nombreVer" value="" class="control" readonly id="nombreVer" />
+                    </div>
+                    <div class="controles">
+                        <label>NIT:</label>
+                        <input type="text" name="nitVer" value="" class="control" readonly id="nitVer" />
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label>DUI:</label>
+                        <input type="text" name="duiVer" value="" class="control" readonly id="duiVer" />
+                    </div>
+
+                    <div class="controles">
+                        <label>Telefono:</label>
+                        <input type="text" name="telVer" value="" class="control" readonly id="telVer" />
+                    </div>
+                </div>
+
+                <div class="grupoControles">
+                    <div class="controles">
+                        <label>Fecha:</label>
+                        <input type="date" name="fecha" value="" class="control" id="fecha" readonly />
+                    </div>
+                    <div class="controles">
+                        <label>Hora:</label>
+                        <input type="time" name="hora" value="" class="control" id="hora" readonly />
+                    </div>
+                </div>
+                <div class="grupoControles">
+                    <button id="asignarVer" class="btnEnviar" type="button">Asignar</button>
+                    <button id="anularVer" class="btnEnviar" type="button">Anular</button>
+                </div>
+                <div id="alertasVer"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade ver-factura" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="verFactura">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-light" style="height: 85vh;">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel">IMPRIMIR FACTURA</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <iframe id="docFactura" style="width: 95%; height: 90%; display:block; margin: 10px auto;" src=""></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendor/fontawesome-free/js/mesas.js"></script>
+</div>
